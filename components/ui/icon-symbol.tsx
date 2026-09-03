@@ -19,6 +19,8 @@ const MAPPING: IconMapping = {
   refresh: "refresh",
   lock: "lock",
   terminal: "terminal",
+  folder: "folder",
+  check: "check",
 };
 
 export function IconSymbol({

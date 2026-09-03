@@ -38,3 +38,7 @@ O modo de desenvolvimento sem autenticação é destinado somente a uma rede Wi�
 - `tools/ashell/`: cliente Python, instalador e documentação para a‑Shell.
 - `research-distributed-clusters.md`: pesquisa de arquitetura e roadmap.
 - `docs-terminal-access.md`: contrato previsto para acesso de terminal.
+
+## Modelos locais
+
+Na aba Modelos, o usuário pode selecionar um arquivo `.gguf` ou `.pte`; o app copia o arquivo para o armazenamento interno e informa o tamanho quando o sistema fornece esse dado. Importar um arquivo não significa que ele já foi executado. O chat só deve ser habilitado depois que um runtime nativo confirmar o carregamento do modelo e disponibilizar a geração de tokens.

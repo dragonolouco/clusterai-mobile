@@ -43,3 +43,16 @@
 
 - [x] Adaptar documentação e comandos para Android/iPhone com a‑Shell
 - [ ] Criar e publicar repositório GitHub privado com o código validado
+
+- [ ] Implementar runtime de inferência local no Android (llama.cpp ou ExecuTorch)
+- [x] Implementar seleção e validação de arquivo GGUF/PTE
+- [ ] Conectar o chat a uma execução real, sem resposta simulada
+- [ ] Integrar o estado do modelo local ao plano de distribuição do cluster
+
+- [x] Pesquisar especificações e benchmarks separados do iPhone 12, realme C51, i7‑2760QM e Ryzen 5 5500
+- [x] Criar perfis de hardware sem inventar resultados não medidos
+- [x] Implementar seleção de modelo, benchmark e planejamento de execução real
+- [x] Atualizar o repositório com a avaliação de hardware e o código de inferência
+
+- [x] Atualizar perfil do PC: Ryzen 5 5500, RAM 2×8 GB dual‑channel e GT 740 GDDR5 apenas para vídeo
+- [x] Excluir VRAM da GT 740 do cálculo de capacidade de inferência
