@@ -62,3 +62,14 @@
 
 - [x] Corrigir bloco de instalação a‑Shell para não depender de git
 - [x] Publicar README e instalador corrigidos com URLs reais do GitHub
+
+- [x] Adicionar fluxo de instalação específico para Termux no Android
+- [x] Adicionar diagnóstico de Python, pacotes e descoberta mDNS no Termux
+
+- [x] Corrigir comandos a‑Shell com caminhos e URLs literais, sem expansão de variáveis
+- [x] Documentar instalação do a‑Shell/iSH e do cliente no iPhone desde o início
+- [x] Documentar instalação do Termux e do cliente no Android desde o início
+
+- [x] Auditar o que vem instalado no a‑Shell oficial e no Termux oficial
+- [x] Documentar pacotes, comandos suportados e limitações por plataforma
+- [x] Criar fluxo completo desde a instalação do terminal até o cliente ClusterAI

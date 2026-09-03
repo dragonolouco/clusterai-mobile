@@ -8,19 +8,7 @@ Código-fonte: https://github.com/dragonolouco/clusterai-mobile
 
 ## a‑Shell no iPhone
 
-No a‑Shell, cole este bloco inteiro. Ele não depende de `git`:
-
-```sh
-BASE="https://raw.githubusercontent.com/dragonolouco/clusterai-mobile/main/tools/ashell"
-DIR="$HOME/clusterai-ashell"
-mkdir -p "$DIR"
-curl -fL "$BASE/clusterai_ashell.py" -o "$DIR/clusterai_ashell.py"
-curl -fL "$BASE/install.sh" -o "$DIR/install.sh"
-sh "$DIR/install.sh"
-python3 "$DIR/clusterai_ashell.py"
-```
-
-O cliente procura `_clusterai._tcp.local` via mDNS e consulta apenas serviços reais encontrados. Ele não usa IP ou porta fixa.
+O manual completo está em [`tools/ashell/README.md`](tools/ashell/README.md). No a‑Shell, use o fluxo com URLs literais e uma linha por vez; não use variáveis como `$BASE` ou `$DIR`. O cliente procura `_clusterai._tcp.local` via mDNS e consulta apenas serviços reais encontrados. Ele não usa IP ou porta fixa.
 
 ## Estado atual
 
@@ -43,3 +31,7 @@ O modo de desenvolvimento sem autenticação é destinado somente a uma rede Wi�
 ## Modelos locais
 
 Na aba Modelos, o usuário pode selecionar um arquivo `.gguf` ou `.pte`; o app copia o arquivo para o armazenamento interno e informa o tamanho quando o sistema fornece esse dado. Importar um arquivo não significa que ele já foi executado. O chat só deve ser habilitado depois que um runtime nativo confirmar o carregamento do modelo e disponibilizar a geração de tokens.
+
+## Termux no Android
+
+O procedimento completo, incluindo instalação do Termux, pacotes iniciais, download sem git, clonagem opcional e diagnóstico, está em [`tools/ashell/README.md`](tools/ashell/README.md). Use o bloco específico do Termux; não use o bloco do a‑Shell no Android. O cliente não abre a porta do aplicativo: ele apenas procura e consulta um serviço real `_clusterai._tcp.local`.
