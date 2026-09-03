@@ -8,18 +8,19 @@ Código-fonte: https://github.com/dragonolouco/clusterai-mobile
 
 ## a‑Shell no iPhone
 
-No a‑Shell, cole:
+No a‑Shell, cole este bloco inteiro. Ele não depende de `git`:
 
 ```sh
-cd ~
-rm -rf clusterai-mobile
-git clone https://github.com/dragonolouco/clusterai-mobile.git
-cd clusterai-mobile/tools/ashell
-sh install.sh
-python3 clusterai_ashell.py
+BASE="https://raw.githubusercontent.com/dragonolouco/clusterai-mobile/main/tools/ashell"
+DIR="$HOME/clusterai-ashell"
+mkdir -p "$DIR"
+curl -fL "$BASE/clusterai_ashell.py" -o "$DIR/clusterai_ashell.py"
+curl -fL "$BASE/install.sh" -o "$DIR/install.sh"
+sh "$DIR/install.sh"
+python3 "$DIR/clusterai_ashell.py"
 ```
 
-Remova o espaço antes de `git clone` ao colar. O cliente procura `_clusterai._tcp.local` via mDNS e consulta apenas serviços realmente encontrados. Ele não usa IP ou porta fixa.
+O cliente procura `_clusterai._tcp.local` via mDNS e consulta apenas serviços reais encontrados. Ele não usa IP ou porta fixa.
 
 ## Estado atual
 

@@ -42,7 +42,7 @@
 - [x] Criar instalador copiável e comandos de clonagem/execução para iPhone
 
 - [x] Adaptar documentação e comandos para Android/iPhone com a‑Shell
-- [ ] Criar e publicar repositório GitHub privado com o código validado
+- [x] Criar e publicar repositório GitHub privado com o código validado
 
 - [ ] Implementar runtime de inferência local no Android (llama.cpp ou ExecuTorch)
 - [x] Implementar seleção e validação de arquivo GGUF/PTE
@@ -56,3 +56,9 @@
 
 - [x] Atualizar perfil do PC: Ryzen 5 5500, RAM 2×8 GB dual‑channel e GT 740 GDDR5 apenas para vídeo
 - [x] Excluir VRAM da GT 740 do cálculo de capacidade de inferência
+
+- [x] Auditar segredos e arquivos internos antes de tornar o repositório público
+- [x] Alterar `dragonolouco/clusterai-mobile` para público e verificar a URL
+
+- [x] Corrigir bloco de instalação a‑Shell para não depender de git
+- [x] Publicar README e instalador corrigidos com URLs reais do GitHub

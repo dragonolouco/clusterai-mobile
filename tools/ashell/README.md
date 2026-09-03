@@ -1,60 +1,30 @@
-# ClusterAI a‑Shell client
+# Cliente ClusterAI para a‑Shell
 
-Cliente de diagnóstico e conexão para iPhone usando [a‑Shell](https://github.com/holzschu/a-shell). O cliente procura serviços `_clusterai._tcp.local` por mDNS na mesma rede Wi‑Fi, lista endereço e porta anunciados e consulta o endpoint `/health` quando ele existir.
+Este cliente funciona no iPhone sem `git`. Ele usa os comandos que o a‑Shell normalmente oferece: `curl`, `mkdir`, `chmod`, `sh` e `python3`. Ele procura `_clusterai._tcp.local` via mDNS e consulta apenas serviços reais encontrados na mesma rede Wi‑Fi.
 
-## Instalação rápida no a‑Shell
-
-Abra o a‑Shell no iPhone e cole este bloco:
+## Instalação direta — copie este bloco inteiro
 
 ```sh
-cd ~
-rm -rf clusterai-ashell
-mkdir -p clusterai-ashell
-cd clusterai-ashell
-curl -L https://github.com/SEU_USUARIO/clusterai-mobile/raw/main/tools/ashell/clusterai_ashell.py -o clusterai_ashell.py
-curl -L https://github.com/SEU_USUARIO/clusterai-mobile/raw/main/tools/ashell/install.sh -o install.sh
-sh install.sh
-python3 clusterai_ashell.py
+BASE="https://raw.githubusercontent.com/dragonolouco/clusterai-mobile/main/tools/ashell"
+DIR="$HOME/clusterai-ashell"
+mkdir -p "$DIR"
+curl -fL "$BASE/clusterai_ashell.py" -o "$DIR/clusterai_ashell.py"
+curl -fL "$BASE/install.sh" -o "$DIR/install.sh"
+sh "$DIR/install.sh"
+python3 "$DIR/clusterai_ashell.py"
 ```
 
-Depois que o repositório tiver uma URL definitiva, substitua `SEU_USUARIO/clusterai-mobile` pela URL real. O bloco não usa IP ou porta fixa. A porta vem do registro mDNS publicado pelo nó ClusterAI.
+Esse fluxo não usa `git clone`, não depende de uma pasta que ainda não existe e pode ser executado novamente para atualizar os arquivos. Se `curl` retornar erro, verifique a conexão com a internet e se o endereço do repositório continua correto.
 
-## Clonar o repositório completo
-
-Quando o `git` estiver disponível no ambiente a‑Shell, o fluxo completo é:
+## Comandos de consulta
 
 ```sh
-cd ~
-rm -rf clusterai-mobile
-git clone https://github.com/SEU_USUARIO/clusterai-mobile.git
-cd clusterai-mobile/tools/ashell
-sh install.sh
-python3 clusterai_ashell.py
+python3 "$HOME/clusterai-ashell/clusterai_ashell.py" --timeout 5
+python3 "$HOME/clusterai-ashell/clusterai_ashell.py" --json
 ```
 
-O espaço antes de `git clone` deve ser removido ao colar; ele está separado aqui apenas para destacar o comando. O instalador não abre portas, não finge conexão e não instala um daemon de fundo.
+A saída informa somente o nome anunciado, endereço, porta e resultado de `/health` dos serviços encontrados. Se nenhum aplicativo Android estiver anunciando o serviço, o resultado correto será “nenhum serviço encontrado”.
 
-## Opções
+## Limites
 
-```sh
-python3 clusterai_ashell.py --timeout 5
-python3 clusterai_ashell.py --json
-```
-
-A saída só contém serviços encontrados na rede e o resultado da consulta de saúde. Se não houver serviço, o cliente informa que nenhum nó foi encontrado.
-
-## Contrato esperado do nó ClusterAI
-
-O aplicativo Android deverá anunciar `_clusterai._tcp.local` por NSD/DNS‑SD. O endpoint HTTP mínimo planejado é:
-
-```text
-GET /health
-```
-
-A resposta deverá ser JSON com estado do serviço, versão do protocolo, identidade pública do nó e timestamp. Os endpoints de cluster e inferência devem ser adicionados somente depois que o transporte nativo e o modelo local existirem.
-
-## Limitações reais
-
-O a‑Shell é um cliente opcional de terminal. Ele não transforma o iPhone em um worker de inferência Android nem cria, sozinho, uma porta no aplicativo. O aplicativo Android precisa estar aberto, anunciar o serviço e fornecer um endpoint real. A rede Wi‑Fi precisa permitir multicast mDNS e comunicação entre clientes; redes com isolamento de clientes podem impedir a descoberta.
-
-O modo de desenvolvimento pode operar sem autenticação apenas em uma rede controlada de testes. Nesse caso, qualquer aparelho que alcançar a porta poderá tentar consultar o endpoint. Não use esse modo em uma rede pública ou compartilhada. O fluxo de produção deve exigir pareamento e sessão autenticada.
+O a‑Shell é um cliente de terminal; ele não transforma o iPhone em um worker de inferência por si só. O aplicativo Android precisa publicar um serviço `_clusterai._tcp.local` e responder em `/health`. A rede também precisa permitir multicast mDNS e comunicação entre clientes. O modo sem autenticação é apenas para uma rede de teste controlada.
