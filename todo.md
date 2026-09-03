@@ -23,3 +23,7 @@
 - [x] Adicionar áreas reais de Chat, Modelo local e estado de inferência
 - [x] Documentar arquitetura real de runtime Android e inferência distribuída
 - [ ] Integrar descoberta NSD/mDNS e runtime nativo de inferência em etapa posterior
+
+- [x] Entregar o código-fonte revisado diretamente em ZIP, sem publicação
+
+- [x] Pesquisa detalhada sobre inferência distribuída heterogênea, gargalos e roadmap
