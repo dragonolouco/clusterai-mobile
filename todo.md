@@ -36,3 +36,10 @@
 - [x] Adicionar aba Rede e Porta com porta real, estado do serviço e conexões ativas
 - [x] Documentar acesso opcional por a‑Shell/terminal sem expor a porta como requisito manual
 - [x] Garantir que informações técnicas só apareçam quando forem medidas ou realmente abertas
+
+- [x] Criar modo de desenvolvimento sem autenticação com aviso explícito de rede confiável
+- [x] Criar cliente a‑Shell com descoberta mDNS e porta compartilhada do protocolo
+- [x] Criar instalador copiável e comandos de clonagem/execução para iPhone
+
+- [x] Adaptar documentação e comandos para Android/iPhone com a‑Shell
+- [ ] Criar e publicar repositório GitHub privado com o código validado
