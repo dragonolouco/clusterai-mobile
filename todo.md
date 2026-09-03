@@ -13,3 +13,13 @@
 - [ ] Persistência local das preferências
 - [ ] Testes unitários da lógica de descoberta, pareamento e agregação
 - [ ] Documentação de instalação, uso e limitações do APK
+
+- [ ] Corrigir a assinatura Android EAS: configurar signing_key para o projeto EAS já vinculado
+
+- [x] Preparar entrega do código-fonte atual em arquivo ZIP, sem APK
+
+- [x] Remover dados de demonstração, números inventados, nomes fictícios e portas pré-preenchidas
+- [x] Exibir apenas telemetria medida ou o estado explícito de indisponibilidade
+- [x] Adicionar áreas reais de Chat, Modelo local e estado de inferência
+- [x] Documentar arquitetura real de runtime Android e inferência distribuída
+- [ ] Integrar descoberta NSD/mDNS e runtime nativo de inferência em etapa posterior
