@@ -27,3 +27,8 @@
 - [x] Entregar o código-fonte revisado diretamente em ZIP, sem publicação
 
 - [x] Pesquisa detalhada sobre inferência distribuída heterogênea, gargalos e roadmap
+
+- [x] Criar domínio tipado de nós, capacidades medidas e plano proporcional de camadas
+- [x] Adicionar cálculo de capacidade com benchmark, memória, rede, bateria e temperatura
+- [x] Aprimorar Cluster, Chat e Modelos com estados verificáveis e sem respostas simuladas
+- [x] Atualizar documentação do aprimoramento e gerar novo ZIP do código-fonte
