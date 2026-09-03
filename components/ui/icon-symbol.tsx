@@ -15,6 +15,10 @@ const MAPPING: IconMapping = {
   memory: "memory",
   hub: "hub",
   chat: "chat",
+  router: "router",
+  refresh: "refresh",
+  lock: "lock",
+  terminal: "terminal",
 };
 
 export function IconSymbol({

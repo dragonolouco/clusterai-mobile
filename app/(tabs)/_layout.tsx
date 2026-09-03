@@ -13,5 +13,6 @@ export default function TabLayout() {
     <Tabs.Screen name="index" options={{ title: "Cluster", tabBarIcon: ({ color }) => <IconSymbol size={24} name="hub" color={color} /> }} />
     <Tabs.Screen name="chat" options={{ title: "Chat", tabBarIcon: ({ color }) => <IconSymbol size={24} name="chat" color={color} /> }} />
     <Tabs.Screen name="model" options={{ title: "Modelos", tabBarIcon: ({ color }) => <IconSymbol size={24} name="memory" color={color} /> }} />
+    <Tabs.Screen name="network" options={{ title: "Rede", tabBarIcon: ({ color }) => <IconSymbol size={24} name="router" color={color} /> }} />
   </Tabs>;
 }

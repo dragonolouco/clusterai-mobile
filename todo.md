@@ -32,3 +32,7 @@
 - [x] Adicionar cálculo de capacidade com benchmark, memória, rede, bateria e temperatura
 - [x] Aprimorar Cluster, Chat e Modelos com estados verificáveis e sem respostas simuladas
 - [x] Atualizar documentação do aprimoramento e gerar novo ZIP do código-fonte
+
+- [x] Adicionar aba Rede e Porta com porta real, estado do serviço e conexões ativas
+- [x] Documentar acesso opcional por a‑Shell/terminal sem expor a porta como requisito manual
+- [x] Garantir que informações técnicas só apareçam quando forem medidas ou realmente abertas

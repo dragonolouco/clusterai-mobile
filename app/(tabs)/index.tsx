@@ -42,7 +42,7 @@ export default function ClusterScreen() {
   async function readDeviceFacts() {
     try {
       const state = await Network.getNetworkStateAsync();
-      const ip = await Network.getIpAddressAsync();
+      const ip = Platform.OS === "web" ? "0.0.0.0" : await Network.getIpAddressAsync();
       const battery = Platform.OS === "web" ? null : await Battery.getBatteryLevelAsync();
       setFacts({
         ip: ip && ip !== "0.0.0.0" ? ip : "Não disponível",
